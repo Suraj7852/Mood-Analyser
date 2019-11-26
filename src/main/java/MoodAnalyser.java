@@ -16,6 +16,8 @@ public class MoodAnalyser {
 
     public String analyseMood() throws MoodAnalyserException{
         try {
+            if(message.length()==0)
+                throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.ENTERED_EMPTY,"Enter proper Mood");
             if(message.contains("sad"))
                 return "SAD";
             else

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MoodAnalyserTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-11-26T06:11:46" hostname="admin1-desktop" time="0.013">
+<testsuite name="MoodAnalyserTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-11-26T06:17:25" hostname="admin1-desktop" time="0.01">
   <properties/>
   <testcase name="givenMessageWhenSadShouldReturnSad" classname="MoodAnalyserTest" time="0.001"/>
   <testcase name="givenAnyMessagethenItShouldReturnHappy" classname="MoodAnalyserTest" time="0.0"/>
-  <testcase name="givenNullMoodShouldThrowMoodAnalysisException" classname="MoodAnalyserTest" time="0.0"/>
-  <testcase name="givenNullMoodShouldReturnHappy" classname="MoodAnalyserTest" time="0.01"/>
+  <testcase name="givenNullMoodShouldThrowMoodAnalysisException" classname="MoodAnalyserTest" time="0.001"/>
+  <testcase name="givenNullMoodShouldReturnHappy" classname="MoodAnalyserTest" time="0.008"/>
+  <testcase name="givenEmptyMoodShouldThrowMoodAnalysisExceptionEmpty" classname="MoodAnalyserTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[MoodAnalyserException: Enter Proper mood
-	at MoodAnalyser.analyseMood(MoodAnalyser.java:24)
+	at MoodAnalyser.analyseMood(MoodAnalyser.java:26)
 	at MoodAnalyserTest.givenNullMoodShouldReturnHappy(MoodAnalyserTest.java:29)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
