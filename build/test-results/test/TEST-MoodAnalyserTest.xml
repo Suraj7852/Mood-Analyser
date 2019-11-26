@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MoodAnalyserTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-11-26T06:44:17" hostname="admin1-desktop" time="0.008">
+<testsuite name="MoodAnalyserTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2019-11-26T09:52:53" hostname="admin1-desktop" time="0.011">
   <properties/>
   <testcase name="givenMessageWhenSadShouldReturnSad" classname="MoodAnalyserTest" time="0.001"/>
+  <testcase name="givenMoodAnalyserImproperClassNameShouldReturnException" classname="MoodAnalyserTest" time="0.0"/>
   <testcase name="givenAnyMessagethenItShouldReturnHappy" classname="MoodAnalyserTest" time="0.0"/>
   <testcase name="givenNullMoodShouldThrowMoodAnalysisException" classname="MoodAnalyserTest" time="0.001"/>
-  <testcase name="givenNullMoodShouldReturnHappy" classname="MoodAnalyserTest" time="0.005"/>
+  <testcase name="givenNullMoodShouldReturnHappy" classname="MoodAnalyserTest" time="0.008"/>
   <testcase name="givenEmptyMoodShouldThrowMoodAnalysisExceptionEmpty" classname="MoodAnalyserTest" time="0.0"/>
   <testcase name="givenMoodAnalyserClassWhenProperShouldReturnObject" classname="MoodAnalyserTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
