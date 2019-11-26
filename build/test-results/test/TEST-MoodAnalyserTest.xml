@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MoodAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-26T04:48:08" hostname="admin1-desktop" time="0.001">
+  <properties/>
+  <testcase name="givenMessageWhenSadShouldReturnSad" classname="MoodAnalyserTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
