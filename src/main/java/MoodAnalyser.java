@@ -25,6 +25,11 @@ public class MoodAnalyser {
         } catch (NullPointerException e) {
             throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.ENTERED_NULL,"Enter Proper mood");
         }
+    }
 
+    public boolean equals(Object another) {
+        if(this.message.equals(((MoodAnalyser) another).message))
+            return true;
+        return false;
     }
 }
