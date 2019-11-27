@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+
 public class MoodAnalyserTest {
     @Test
     public void givenMessageWhenSadShouldReturnSad() {
@@ -53,15 +55,21 @@ public class MoodAnalyserTest {
     }
 
     @Test
-    public void givenMoodAnalyserClassWhenProperShouldReturnObject() throws MoodAnalyserException {
-        MoodAnalyser moodAnalyser = MoodAnalyserFactory.createMoodAnalyser("I am in happy mood");
-        Assert.assertEquals(new MoodAnalyser("I am in happy mood"), moodAnalyser);
+    public void givenMoodAnalyserClassWhenProperShouldReturnObject() {
+        try{
+            Constructor<?> constructor =  MoodAnalyserReflector.getConstructor(String.class);
+            Object myObject = MoodAnalyserReflector.createMoodAnalyser(constructor,"I am in happy mood");
+            Assert.assertEquals(new MoodAnalyser("I am in happy mood"),myObject);
+        } catch (MoodAnalyserException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
     public void givenMoodAnalyserImproperClassNameShouldReturnException() {
         try {
-            MoodAnalyserFactory.createMoodAnalyser("I am in happy mood");
+            Constructor<?> constructor =  MoodAnalyserReflector.getConstructor(String.class);
+            MoodAnalyserReflector.createMoodAnalyser(constructor,"I am in happy mood");
         } catch (MoodAnalyserException e) {
             Assert.assertEquals(MoodAnalyserException.ExceptionType.NO_SUCH_CLASS, e.type);
         }
@@ -70,9 +78,12 @@ public class MoodAnalyserTest {
     @Test
     public void givenMoodAnalyserImproperMethodNameShouldReturnException() {
         try {
-            MoodAnalyserFactory.createMoodAnalyser("I am in happy mood");
+            Constructor<?> constructor =  MoodAnalyserReflector.getConstructor(String.class);
+            MoodAnalyserReflector.createMoodAnalyser(constructor,"I am in happy mood");
         } catch (MoodAnalyserException e) {
             Assert.assertEquals(MoodAnalyserException.ExceptionType.NO_SUCH_METHOD, e.type);
         }
     }
+
+
 }
