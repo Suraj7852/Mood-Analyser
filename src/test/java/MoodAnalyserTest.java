@@ -85,5 +85,17 @@ public class MoodAnalyserTest {
         }
     }
 
+    @Test
+    public void givenHappyMessageWithReflectionShouldReturnHappy() {
+        try {
+            Constructor<?> constructor =  MoodAnalyserReflector.getConstructor();
+            Object myObject = MoodAnalyserReflector.createMoodAnalyser(constructor);
+            Object analyseMood = MoodAnalyserReflector.invokeMethod(myObject, "analyseMood");
+            Assert.assertEquals("HAPPY",analyseMood);
+        }catch (MoodAnalyserException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
