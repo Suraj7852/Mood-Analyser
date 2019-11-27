@@ -97,5 +97,31 @@ public class MoodAnalyserTest {
         }
     }
 
+    @Test
+    public void givenMoodAnalyserOnChangeMoodShouldReturnHappy() {
+        try {
+            Constructor<?> constructor =  MoodAnalyserReflector.getConstructor();
+            Object myObject = MoodAnalyserReflector.createMoodAnalyser(constructor);
+            MoodAnalyserReflector.setFieldValue(myObject, "message", "I am in happy mood");
+            Object mood = MoodAnalyserReflector.invokeMethod(myObject, "analyseMood");
+            Assert.assertEquals("HAPPY",mood);
+        } catch (MoodAnalyserException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void givenHappyMessageWithDefaultConstructorShouldReturnHappy() {
+        try {
+            Constructor<?> constructor =  MoodAnalyserReflector.getConstructor();
+            Object myObject = MoodAnalyserReflector.createMoodAnalyser(constructor);
+            MoodAnalyserReflector.setFieldValue(myObject, "message", "I am in happy mood");
+            Object mood = MoodAnalyserReflector.invokeMethod(myObject, "analyseMood");
+            Assert.assertEquals("HAPPY",mood);
+        } catch (MoodAnalyserException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }
